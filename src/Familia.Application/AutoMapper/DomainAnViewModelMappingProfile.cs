@@ -8,8 +8,7 @@ namespace Familia.Application.AutoMapper
     {
         public DomainAnViewModelMappingProfile()
         {
-            //CreateMap<Family, FamilyViewModel>().ReverseMap();
-            //CreateMap<Dependent, DependentViewModel>().ReverseMap();
+            CreateMap<Points, PointsViewModel>().ReverseMap();
            
         }
     }

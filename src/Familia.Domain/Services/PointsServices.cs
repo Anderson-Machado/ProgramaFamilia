@@ -3,6 +3,7 @@ using Familia.Domain.Interfaces.Repositories;
 using Familia.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Familia.Domain.Services
@@ -17,9 +18,13 @@ namespace Familia.Domain.Services
             _familyRepositorie = familyRepositorie;
         }
 
-        public Task<IEnumerable<Points>> GetPointsFamily()
+        public async Task<IEnumerable<Points>> GetPointsFamily()
         {
-            throw new NotImplementedException();
+           //TODO: AJUSTAR CODIGO PARA EFETUAR OS DEVIDOS CALCULOS AQUI.
+
+            var listPoints = new List<Points>() { new Points() { Id = 1, Name = "papa", PointsFamily = 5 } };
+
+            return listPoints;
         }
     }
 }
