@@ -3,6 +3,7 @@ using Familia.Application.Interfaces;
 using Familia.Data;
 using Familia.Domain.Interfaces.Services;
 using Familia.Domain.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,13 @@ namespace Familia.Application
             services.AddAutoMapper(typeof(Startup));
 
             return services;
+        }
+
+        public static IApplicationBuilder SeedData(this IApplicationBuilder app)
+        {
+            app.SeedDatabase();
+            return app;
+
         }
     }
 }

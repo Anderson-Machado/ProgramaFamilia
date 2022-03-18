@@ -8,6 +8,6 @@ namespace Familia.Domain.Entities
 
         public int IdFamily { get; set; }
 
-        public decimal Income { get; set; }
+        public double Income { get; set; }
     }
 }
