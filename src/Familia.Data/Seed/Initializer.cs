@@ -21,7 +21,7 @@ namespace Familia.Data.Seed
             {
                 
                 Name = "Machado",
-                Dependents = new List<Dependent>() { new Dependent() { Age = 22, IdFamily = 1, Income = 1200 } },
+                Dependents = new List<Dependent>() { new Dependent() { Age = 22, IdFamily = 1, Income = 900 } },
 
             };
 

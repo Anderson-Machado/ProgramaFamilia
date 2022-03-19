@@ -1,4 +1,5 @@
 ﻿using Familia.Domain.Entities;
+using Familia.Domain.Interfaces.Factory;
 using Familia.Domain.Interfaces.Repositories;
 using Familia.Domain.Interfaces.Services;
 using System;
@@ -12,17 +13,22 @@ namespace Familia.Domain.Services
     {
 
         private readonly IFamilyRepositorie _familyRepositorie;
+        private readonly IProviderPoints _providerPoints;
 
-        public PointsServices(IFamilyRepositorie familyRepositorie)
+        public PointsServices(IFamilyRepositorie familyRepositorie, IProviderPoints providerPoints)
         {
             _familyRepositorie = familyRepositorie;
+            _providerPoints = providerPoints;
         }
 
-        public async Task<IEnumerable<Points>> GetPointsFamily()
+        public async Task<IEnumerable<Familia.Domain.Entities.Points>> GetPointsFamily()
         {
-           //TODO: AJUSTAR CODIGO PARA EFETUAR OS DEVIDOS CALCULOS AQUI.
+            
+            var family = await _familyRepositorie.GeFamilia();
 
-            var listPoints = new List<Points>() { new Points() { Id = 1, Name = "papa", PointsFamily = 5 } };
+            var listPoints = new List<Familia.Domain.Entities.Points>();
+
+            _providerPoints.GeneratePointsValues(family, listPoints);
 
             return listPoints;
         }
