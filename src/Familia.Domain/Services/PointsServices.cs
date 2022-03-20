@@ -21,7 +21,7 @@ namespace Familia.Domain.Services
             _providerPoints = providerPoints;
         }
 
-        public async Task<IEnumerable<Familia.Domain.Entities.Points>> GetPointsFamily()
+        public async Task<IEnumerable<Points>> GetPointsFamily()
         {
             
             var family = await _familyRepositorie.GeFamilia();
@@ -30,7 +30,7 @@ namespace Familia.Domain.Services
 
             _providerPoints.GeneratePointsValues(family, listPoints);
 
-            return listPoints;
+            return listPoints.OrderByDescending(x=>x.PointsFamily);
         }
     }
 }

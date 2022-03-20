@@ -26,9 +26,8 @@ namespace Familia.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    IdFamily = table.Column<int>(type: "int", nullable: false),
-                    Income = table.Column<double>(type: "float", nullable: false),
-                    FamilyId = table.Column<int>(type: "int", nullable: true)
+                    FamilyId = table.Column<int>(type: "int", nullable: false),
+                    Income = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +37,7 @@ namespace Familia.Data.Migrations
                         column: x => x.FamilyId,
                         principalTable: "Family",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,23 +1,20 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Desafio técnico
+## Seleção de famílias aptas a ganharem uma casa popular
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+- Teste desenvolvido em template WebApi (RestAPI) em .Net core 5.
+- Utilizado banco de dados SQlEXPRESS para armazenar dados das familias.
+- Utilizado EntityFrameWork para manipulação gerenciamento. 
+- Utilizado Migrations para gerar a base de dados em SQL.
+### Gerar o Banco de dados:
+ Para gerar o banco de dados, é necessário que tenhas o SQLEXPRESS instalado na maqui ou apontar a string de conexão em "appsettings.json" para o servidor de banco desejado.
+ Para gerar o banco, rode os seguintes comandos no Visual Studio em Package Manager Console apontando o default project para "familia.data".
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+	Add-Migration CreateInitialSchema -Context DatabaseContext
+	script-migration -Context DatabaseContext (Opcional. Rode o comando se desejar gerar script.)
+	Update-Database -Context DatabaseContext
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+### Informações de armazenamento das familias:
+Dentro da aplicação existe a funcionalidade de SEED para gerar os dados das familias para facilitar o entendimento.
+Ao rodar a aplicação pela primeira vez será feito uma verificação se existe dados nas tabelas respectivas da base de dados, caso não exista o software fará o insert.
 
-Add-Migration CreateInitialSchema -Context DatabaseContext
-Update-Database -Context DatabaseContext

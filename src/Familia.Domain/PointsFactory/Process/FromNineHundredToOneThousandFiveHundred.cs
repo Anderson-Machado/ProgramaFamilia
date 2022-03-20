@@ -14,7 +14,7 @@ namespace Familia.Domain.PointsFactory.Process
         {
             foreach (var item in families)
             {
-                var total = item.Dependents.Where(x => x.IdFamily == item.Id).ToList().Sum(x => x.Income);
+                var total = item.Dependents.Where(x => x.FamilyId == item.Id).ToList().Sum(x => x.Income);
 
                 if (total >= 901 && total <=1500)
                 {

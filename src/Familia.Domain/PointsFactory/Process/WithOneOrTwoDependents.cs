@@ -14,7 +14,7 @@ namespace Familia.Domain.PointsFactory.Process
         {
             foreach (var item in families)
             {
-                var total = item.Dependents.Where(x => x.IdFamily == item.Id).Count();
+                var total = item.Dependents.Where(x => x.FamilyId == item.Id && x.Age < 18).Count();
 
                 if (total >= 1 && total<=2)
                 {

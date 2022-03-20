@@ -6,7 +6,7 @@ namespace Familia.Domain.Entities
     {
         public int Age { get; set; }
 
-        public int IdFamily { get; set; }
+        public int FamilyId { get; set; }
 
         public double Income { get; set; }
     }

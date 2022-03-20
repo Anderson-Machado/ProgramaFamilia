@@ -10,6 +10,6 @@ namespace Familia.Domain.Entities
             Dependents = new();
         }
         public string Name { get; set; }
-        public List<Dependent> Dependents { get; set; }
+        public virtual List<Dependent> Dependents { get; set; }
     }
 }
