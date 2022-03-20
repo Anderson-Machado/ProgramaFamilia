@@ -2,7 +2,7 @@
 
 namespace Familia.Application.ViewModel
 {
-    public class PointsViewModel : Entity
+    public class PointsViewModel
     {
         public string Name { get; set; }
         public int PointsFamily { get; set; }
