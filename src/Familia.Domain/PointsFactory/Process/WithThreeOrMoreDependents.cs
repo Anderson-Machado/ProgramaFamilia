@@ -16,7 +16,7 @@ namespace Familia.Domain.PointsFactory.Process
                 if (total >= 3)
                 {
                     var point = new Points()
-                    {
+                    {   
                         Name = item.Name,
                         PointsFamily = 3
                     };

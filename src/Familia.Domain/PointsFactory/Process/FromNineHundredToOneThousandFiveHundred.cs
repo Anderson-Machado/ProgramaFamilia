@@ -17,6 +17,7 @@ namespace Familia.Domain.PointsFactory.Process
                 {
                     var point = new Points()
                     {
+                        Type = "FromNineHundredToOneThousandFiveHundred",
                         Name = item.Name,
                         PointsFamily = 3
                     };

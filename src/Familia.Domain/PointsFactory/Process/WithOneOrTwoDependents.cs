@@ -17,6 +17,7 @@ namespace Familia.Domain.PointsFactory.Process
                 {
                     var point = new Points()
                     {
+                        Type = "WithOneOrTwoDependents",
                         Name = item.Name,
                         PointsFamily = 2
                     };
