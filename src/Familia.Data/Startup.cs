@@ -21,7 +21,7 @@ namespace Familia.Data
             services.AddScoped<IFamilyRepositorie, FamilyRepositorie>();
             #endregion
 
-           
+
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(
                     DatabaseConnection.ConnectionConfiguration

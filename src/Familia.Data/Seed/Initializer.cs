@@ -19,7 +19,7 @@ namespace Familia.Data.Seed
         {
             var fam = new Family()
             {
-                
+
                 Name = "Machado",
                 Dependents = new List<Dependent>() { new Dependent() { Age = 22, Income = 1200 } },
 
@@ -27,7 +27,7 @@ namespace Familia.Data.Seed
 
             var fam2 = new Family()
             {
-                
+
                 Name = "Continentino",
                 Dependents = new List<Dependent>() { new Dependent() { Age = 22, Income = 600 },
                                                      new Dependent() { Age = 17, Income = 500 }

@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Familia.Domain.Entities;
+﻿using Familia.Domain.Entities;
 using Familia.Domain.Kernel.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace Familia.Data.Context
@@ -9,7 +9,7 @@ namespace Familia.Data.Context
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Family> Family { get; set; }

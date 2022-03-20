@@ -2,7 +2,6 @@
 using Familia.Domain.Interfaces.Factory;
 using Familia.Domain.Interfaces.Repositories;
 using Familia.Domain.Interfaces.Services;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,14 +22,14 @@ namespace Familia.Domain.Services
 
         public async Task<IEnumerable<Points>> GetPointsFamily()
         {
-            
+
             var family = await _familyRepositorie.GeFamilia();
 
             var listPoints = new List<Familia.Domain.Entities.Points>();
 
             _providerPoints.GeneratePointsValues(family, listPoints);
 
-            return listPoints.OrderByDescending(x=>x.PointsFamily);
+            return listPoints.OrderByDescending(x => x.PointsFamily);
         }
     }
 }

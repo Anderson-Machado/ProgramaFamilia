@@ -17,7 +17,7 @@ namespace Familia.Data.Repositories
 
         public async Task<IEnumerable<Family>> GeFamilia()
         {
-            return await _db.Family.Include(x=>x.Dependents).ToListAsync();
+            return await _db.Family.Include(x => x.Dependents).ToListAsync();
         }
     }
 }

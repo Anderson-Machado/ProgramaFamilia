@@ -9,7 +9,7 @@ namespace Familia.Application.AutoMapper
         public DomainAnViewModelMappingProfile()
         {
             CreateMap<Points, PointsViewModel>().ReverseMap();
-           
+
         }
     }
 }

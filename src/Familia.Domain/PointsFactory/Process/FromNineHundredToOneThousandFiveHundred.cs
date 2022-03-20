@@ -1,10 +1,7 @@
 ﻿using Familia.Domain.Entities;
 using Familia.Domain.Interfaces.Factory;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Familia.Domain.PointsFactory.Process
 {
@@ -16,7 +13,7 @@ namespace Familia.Domain.PointsFactory.Process
             {
                 var total = item.Dependents.Where(x => x.FamilyId == item.Id).ToList().Sum(x => x.Income);
 
-                if (total >= 901 && total <=1500)
+                if (total >= 901 && total <= 1500)
                 {
                     var point = new Points()
                     {

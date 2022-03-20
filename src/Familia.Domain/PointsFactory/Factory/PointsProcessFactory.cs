@@ -2,10 +2,6 @@
 using Familia.Domain.Interfaces.Factory;
 using Familia.Domain.PointsFactory.Process;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Familia.Domain.PointsFactory.Factory
 {
