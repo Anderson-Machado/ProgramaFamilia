@@ -48,6 +48,41 @@ namespace Familia.Tests.Domain.PointsFactory
         }
 
         [Fact]
+        [Trait("ProviderPointsTest", "Deve retornar sucesso contendo 5 e 2 points considerando regra de até 900 e com dois dependentes com idade menor que 18, " +
+               "familia pontuando apenas uma unica vez por critério.")]
+        public void ShouldReturnSuccessContainingFiveAndTwo2()
+        {
+            var listPoints = new List<Points>();
+            var listFamily = new List<Family>() { new Family()
+                {
+
+                    Name = "Bernado",
+                    Dependents = new List<Dependent>() { new Dependent() { Age = 17, Income = 400 },
+                                                         new Dependent() { Age = 15, Income = 300 }},
+                },
+
+                new Family()
+                {
+
+                    Name = "Bernado",
+                    Dependents = new List<Dependent>() { new Dependent() { Age = 17, Income = 400 },
+                                                         new Dependent() { Age = 15, Income = 300 }},
+
+                }
+
+
+            };
+
+            Factory(listFamily, listPoints);
+
+            Assert.Equal(2, listPoints.Count);
+            Assert.Contains(listPoints, x => x.PointsFamily == 5);
+            Assert.Contains(listPoints, x => x.PointsFamily == 2);
+
+        }
+
+
+        [Fact]
         [Trait("ProviderPointsTest", "Deve retornar sucesso contendo 5 pontos considerando regra de até 900 e com dois dependentes com idade maior que 18.")]
         public void MustReturnSuccessContainingFivePoints()
         {

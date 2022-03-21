@@ -6,5 +6,7 @@ namespace Familia.Application.ViewModel
     {
         public string Name { get; set; }
         public int PointsFamily { get; set; }
+        public string Type { get; set; }
+
     }
 }
